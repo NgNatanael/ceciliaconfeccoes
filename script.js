@@ -21,24 +21,29 @@ function buscarProduto() {
     });
 }
 
-function abrirModal(titulo, imagem, descricao) {
+function abrirModal(titulo) {
     var modal = document.getElementById('modal');
-    document.getElementById('modal-title').innerText = titulo;
-    document.getElementById('modal-img').src = imagem;
-    document.getElementById('modal-desc').innerText = descricao;
-    document.getElementById('whatsapp-btn').onclick = function() {
-        redirecionarWhatsApp(titulo);
-    };
-    modal.style.display = "block";
+    var modalTitle = document.getElementById('modal-title');
+    var modalImg = document.getElementById('modal-img');
+    
+    // Define o título e imagem (você pode ajustar com base nos produtos)
+    modalTitle.innerText = titulo;
+    modalImg.src = "https://source.unsplash.com/random/300x400?" + titulo.toLowerCase().replace(" ", "");
+
+    modal.classList.add("open");
 }
 
 function fecharModal() {
-    document.getElementById('modal').style.display = "none";
+    var modal = document.getElementById('modal');
+    modal.classList.remove("open");
 }
 
 function adicionarAoCarrinho(item) {
-    cartItems.push(item);
+    var tamanhoSelecionado = document.getElementById('sizes').value;
+    var itemComTamanho = item + " - Tamanho: " + tamanhoSelecionado;
+    cartItems.push(itemComTamanho);
     atualizarCarrinho();
+    fecharModal(); // Fecha o modal ao adicionar ao carrinho
 }
 
 function atualizarCarrinho() {
@@ -49,6 +54,9 @@ function atualizarCarrinho() {
         li.innerText = item;
         cartList.appendChild(li);
     });
+
+    // Abre o carrinho automaticamente ao adicionar itens
+    document.getElementById('cart').classList.add('open');
 }
 
 function finalizarCompra() {

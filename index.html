@@ -26,17 +26,17 @@
                 <div class="item" data-name="Vestido Floral">
                     <img src="https://source.unsplash.com/random/300x400?dress" alt="Vestido Floral">
                     <h2>Vestido Floral</h2>
-                    <button onclick="adicionarAoCarrinho('Vestido Floral')">Adicionar ao Carrinho</button>
+                    <button onclick="abrirModal('Vestido Floral')">Ver Detalhes</button>
                 </div>
                 <div class="item" data-name="Camiseta Branca">
                     <img src="https://source.unsplash.com/random/300x400?tshirt" alt="Camiseta Branca">
                     <h2>Camiseta Branca</h2>
-                    <button onclick="adicionarAoCarrinho('Camiseta Branca')">Adicionar ao Carrinho</button>
+                    <button onclick="abrirModal('Camiseta Branca')">Ver Detalhes</button>
                 </div>
                 <div class="item" data-name="Jaqueta Jeans">
                     <img src="https://source.unsplash.com/random/300x400?jacket" alt="Jaqueta Jeans">
                     <h2>Jaqueta Jeans</h2>
-                    <button onclick="adicionarAoCarrinho('Jaqueta Jeans')">Adicionar ao Carrinho</button>
+                    <button onclick="abrirModal('Jaqueta Jeans')">Ver Detalhes</button>
                 </div>
             </div>
         </section>
@@ -47,17 +47,17 @@
                 <div class="item" data-name="Cortina Cinza">
                     <img src="https://source.unsplash.com/random/300x400?curtain" alt="Cortina Cinza">
                     <h2>Cortina Cinza</h2>
-                    <button onclick="adicionarAoCarrinho('Cortina Cinza')">Adicionar ao Carrinho</button>
+                    <button onclick="abrirModal('Cortina Cinza')">Ver Detalhes</button>
                 </div>
                 <div class="item" data-name="Roupa de Cama Floral">
                     <img src="https://source.unsplash.com/random/300x400?bedding" alt="Roupa de Cama Floral">
                     <h2>Roupa de Cama Floral</h2>
-                    <button onclick="adicionarAoCarrinho('Roupa de Cama Floral')">Adicionar ao Carrinho</button>
+                    <button onclick="abrirModal('Roupa de Cama Floral')">Ver Detalhes</button>
                 </div>
                 <div class="item" data-name="Cobertor de Lã">
                     <img src="https://source.unsplash.com/random/300x400?blanket" alt="Cobertor de Lã">
                     <h2>Cobertor de Lã</h2>
-                    <button onclick="adicionarAoCarrinho('Cobertor de Lã')">Adicionar ao Carrinho</button>
+                    <button onclick="abrirModal('Cobertor de Lã')">Ver Detalhes</button>
                 </div>
             </div>
         </section>
@@ -70,7 +70,14 @@
             <img id="modal-img" src="" alt="Imagem do Produto">
             <h2 id="modal-title"></h2>
             <p id="modal-desc"></p>
-            <button id="whatsapp-btn">Falar com a vendedora</button>
+            <label for="sizes">Tamanhos disponíveis:</label>
+            <select id="sizes">
+                <option value="P">P</option>
+                <option value="M">M</option>
+                <option value="G">G</option>
+                <option value="GG">GG</option>
+            </select>
+            <button id="add-to-cart-btn">Adicionar ao Carrinho</button>
         </div>
     </div>
 
