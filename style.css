@@ -1,13 +1,14 @@
 /* Estilos globais */
 :root {
-    --primary-color: #FF6347; /* Cor principal */
-    --secondary-color: #4CAF50; /* Cor secundária */
-    --background-color: #F9F9F9; /* Cor de fundo */
-    --text-color: #333; /* Cor do texto */
-    --font-primary: 'Roboto', sans-serif;
+    --primary-color: #FAD1D1; /* Rosa claro */
+    --secondary-color: #C47C7C; /* Rosa escuro */
+    --background-color: #FFFFFF; /* Fundo branco */
+    --accent-color: #EDEDED; /* Cinza suave */
+    --text-color: #333333; /* Preto suave */
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Roboto', sans-serif;
 }
 
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -15,38 +16,47 @@
 }
 
 body {
-    font-family: var(--font-primary);
+    font-family: var(--font-secondary);
     background-color: var(--background-color);
     color: var(--text-color);
+    line-height: 1.6;
 }
 
-/* Barra de navegação fixa */
 header {
     text-align: center;
     background-color: var(--primary-color);
-    color: white;
-    padding: 20px;
+    color: var(--text-color);
+    padding: 30px 20px;
+    font-family: var(--font-primary);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: var(--secondary-color);
+}
+
+header p {
+    font-size: 1.2em;
 }
 
 main {
-    padding-top: 100px;
+    padding-top: 120px;
 }
 
-/* Input de busca */
 input[type="text"] {
     width: 80%;
     padding: 10px;
     border: none;
     border-radius: 5px;
     margin-top: 20px;
+    font-family: var(--font-primary);
 }
 
-/* Grid de produtos */
 .catalog {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -54,13 +64,13 @@ input[type="text"] {
     padding: 40px;
 }
 
-/* Estilos dos itens */
 .item {
-    background-color: white;
+    background-color: var(--accent-color);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
     padding: 20px;
+    text-align: center;
 }
 
 .item:hover {
@@ -77,6 +87,7 @@ input[type="text"] {
 h2 {
     font-size: 1.5em;
     margin: 15px 0;
+    color: var(--secondary-color);
 }
 
 button {
@@ -87,17 +98,17 @@ button {
     margin: 10px 0;
     cursor: pointer;
     border-radius: 5px;
+    font-family: var(--font-primary);
     transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #9C5F5F;
 }
 
-/* Carrinho de compras */
 #cart {
     position: fixed;
-    top: 120px;
+    top: 130px;
     right: 20px;
     background-color: white;
     padding: 15px;
@@ -109,11 +120,7 @@ button:hover {
 #cart h2 {
     font-size: 1.2em;
     margin-bottom: 10px;
-}
-
-#cart-items {
-    list-style-type: none;
-    padding: 0;
+    color: var(--secondary-color);
 }
 
 #checkout-btn {
@@ -128,10 +135,9 @@ button:hover {
 }
 
 #checkout-btn:hover {
-    background-color: #e55337;
+    background-color: #F2A5A5;
 }
 
-/* Modal de detalhes */
 .modal {
     display: none;
     position: fixed;
