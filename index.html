@@ -11,6 +11,11 @@
         <h1>Cecília Confecções</h1>
         <p>Catálogo de roupas e itens para o lar</p>
         <input type="text" id="searchBar" onkeyup="buscarProduto()" placeholder="Buscar produto...">
+        <div id="cart">
+            <h2>Carrinho de Compras</h2>
+            <ul id="cart-items"></ul>
+            <button id="checkout-btn" onclick="finalizarCompra()">Finalizar Compra</button>
+        </div>
     </header>
 
     <!-- Seções de categorias -->
@@ -20,6 +25,7 @@
             <div class="item" data-name="Roupa 1" onclick="abrirModal('Roupa 1', 'caminho-da-imagem-1.jpg', 'Descrição da Roupa 1')">
                 <img src="caminho-da-imagem-1.jpg" alt="Roupa 1">
                 <h2>Roupa 1</h2>
+                <button onclick="adicionarAoCarrinho('Roupa 1')">Adicionar ao Carrinho</button>
             </div>
             <!-- Mais itens -->
         </div>
@@ -31,6 +37,7 @@
             <div class="item" data-name="Cortina 1" onclick="abrirModal('Cortina 1', 'caminho-da-imagem-2.jpg', 'Descrição da Cortina 1')">
                 <img src="caminho-da-imagem-2.jpg" alt="Cortina 1">
                 <h2>Cortina 1</h2>
+                <button onclick="adicionarAoCarrinho('Cortina 1')">Adicionar ao Carrinho</button>
             </div>
             <!-- Mais itens -->
         </div>

@@ -1,3 +1,5 @@
+let cartItems = [];
+
 function redirecionarWhatsApp(item) {
     var numeroVendedora = "558399999999"; // Coloque o número da vendedora aqui
     var mensagem = "Olá, estou interessado(a) no item: " + item;
@@ -32,4 +34,30 @@ function abrirModal(titulo, imagem, descricao) {
 
 function fecharModal() {
     document.getElementById('modal').style.display = "none";
+}
+
+function adicionarAoCarrinho(item) {
+    cartItems.push(item);
+    atualizarCarrinho();
+}
+
+function atualizarCarrinho() {
+    var cartList = document.getElementById('cart-items');
+    cartList.innerHTML = "";
+    cartItems.forEach(function(item) {
+        var li = document.createElement('li');
+        li.innerText = item;
+        cartList.appendChild(li);
+    });
+}
+
+function finalizarCompra() {
+    if (cartItems.length > 0) {
+        var numeroVendedora = "558399999999"; // Coloque o número da vendedora aqui
+        var mensagem = "Olá, estou interessado(a) nos seguintes itens: " + cartItems.join(", ");
+        var url = "https://wa.me/" + numeroVendedora + "?text=" + encodeURIComponent(mensagem);
+        window.open(url, "_blank");
+    } else {
+        alert("Seu carrinho está vazio!");
+    }
 }
