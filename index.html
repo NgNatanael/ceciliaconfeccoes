@@ -10,20 +10,32 @@
     <header>
         <h1>Cecília Confecções</h1>
         <p>Catálogo de roupas e itens para o lar</p>
+        <input type="text" id="searchBar" onkeyup="buscarProduto()" placeholder="Buscar produto...">
     </header>
 
-    <section class="catalog">
-        <div class="item">
-            <img src="caminho-da-imagem-1.jpg" alt="Roupa 1">
-            <h2>Roupa 1</h2>
-            <button onclick="redirecionarWhatsApp('Roupa 1')">Falar com a vendedora</button>
+    <!-- Seções de categorias -->
+    <section>
+        <h2>Roupas</h2>
+        <div class="catalog" id="catalog-roupas">
+            <div class="item" data-name="Roupa 1">
+                <img src="caminho-da-imagem-1.jpg" alt="Roupa 1">
+                <h2>Roupa 1</h2>
+                <button onclick="redirecionarWhatsApp('Roupa 1')">Falar com a vendedora</button>
+            </div>
+            <!-- Mais itens -->
         </div>
-        <div class="item">
-            <img src="caminho-da-imagem-2.jpg" alt="Cortina 1">
-            <h2>Cortina 1</h2>
-            <button onclick="redirecionarWhatsApp('Cortina 1')">Falar com a vendedora</button>
+    </section>
+
+    <section>
+        <h2>Itens para o Lar</h2>
+        <div class="catalog" id="catalog-lar">
+            <div class="item" data-name="Cortina 1">
+                <img src="caminho-da-imagem-2.jpg" alt="Cortina 1">
+                <h2>Cortina 1</h2>
+                <button onclick="redirecionarWhatsApp('Cortina 1')">Falar com a vendedora</button>
+            </div>
+            <!-- Mais itens -->
         </div>
-        <!-- Adicione mais itens aqui -->
     </section>
 
     <script src="script.js"></script>
