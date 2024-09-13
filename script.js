@@ -19,16 +19,17 @@ function buscarProduto() {
     });
 }
 
-function mostrarDetalhes(nome, imagem, descricao) {
-    document.getElementById('productModal').style.display = 'flex';
-    document.getElementById('productName').innerText = nome;
-    document.getElementById('productImage').src = imagem;
-    document.getElementById('productDescription').innerText = descricao;
-    document.getElementById('whatsappButton').onclick = function() {
-        redirecionarWhatsApp(nome);
+function abrirModal(titulo, imagem, descricao) {
+    var modal = document.getElementById('modal');
+    document.getElementById('modal-title').innerText = titulo;
+    document.getElementById('modal-img').src = imagem;
+    document.getElementById('modal-desc').innerText = descricao;
+    document.getElementById('whatsapp-btn').onclick = function() {
+        redirecionarWhatsApp(titulo);
     };
+    modal.style.display = "block";
 }
 
 function fecharModal() {
-    document.getElementById('productModal').style.display = 'none';
+    document.getElementById('modal').style.display = "none";
 }

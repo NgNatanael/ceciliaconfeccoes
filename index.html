@@ -17,7 +17,7 @@
     <section>
         <h2>Roupas</h2>
         <div class="catalog" id="catalog-roupas">
-            <div class="item" data-name="Roupa 1" onclick="mostrarDetalhes('Roupa 1', 'caminho-da-imagem-1.jpg', 'Descrição da roupa 1')">
+            <div class="item" data-name="Roupa 1" onclick="abrirModal('Roupa 1', 'caminho-da-imagem-1.jpg', 'Descrição da Roupa 1')">
                 <img src="caminho-da-imagem-1.jpg" alt="Roupa 1">
                 <h2>Roupa 1</h2>
             </div>
@@ -28,7 +28,7 @@
     <section>
         <h2>Itens para o Lar</h2>
         <div class="catalog" id="catalog-lar">
-            <div class="item" data-name="Cortina 1" onclick="mostrarDetalhes('Cortina 1', 'caminho-da-imagem-2.jpg', 'Descrição da cortina 1')">
+            <div class="item" data-name="Cortina 1" onclick="abrirModal('Cortina 1', 'caminho-da-imagem-2.jpg', 'Descrição da Cortina 1')">
                 <img src="caminho-da-imagem-2.jpg" alt="Cortina 1">
                 <h2>Cortina 1</h2>
             </div>
@@ -36,14 +36,14 @@
         </div>
     </section>
 
-    <!-- Modal de Detalhes do Produto -->
-    <div id="productModal" class="modal">
+    <!-- Modal para Detalhes do Produto -->
+    <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="fecharModal()">&times;</span>
-            <img id="productImage" src="" alt="">
-            <h2 id="productName"></h2>
-            <p id="productDescription"></p>
-            <button id="whatsappButton" onclick="">Falar com a vendedora</button>
+            <img id="modal-img" src="" alt="Imagem do Produto">
+            <h2 id="modal-title"></h2>
+            <p id="modal-desc"></p>
+            <button id="whatsapp-btn">Falar com a vendedora</button>
         </div>
     </div>
 

@@ -1,12 +1,11 @@
-/* Cores da paleta */
+/* Estilos globais */
 :root {
-    --primary-color: #FF6347; 
-    --secondary-color: #4CAF50; 
+    --primary-color: #FF6347;
+    --secondary-color: #4CAF50;
     --background-color: #F9F9F9;
     --text-color: #333;
 }
 
-/* Responsividade */
 body {
     font-family: Arial, sans-serif;
     background-color: var(--background-color);
@@ -15,15 +14,8 @@ body {
     text-align: center;
 }
 
-@media (max-width: 768px) {
-    .catalog {
-        flex-direction: column;
-    }
-
-    .item {
-        width: 90%;
-        margin: 10px auto;
-    }
+header {
+    margin-bottom: 20px;
 }
 
 input[type="text"] {
@@ -50,6 +42,11 @@ input[type="text"] {
     width: 200px;
     text-align: center;
     cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.item:hover {
+    transform: scale(1.05);
 }
 
 .item img {
@@ -58,21 +55,7 @@ input[type="text"] {
     border-radius: 5px;
 }
 
-button {
-    background-color: var(--secondary-color);
-    color: white;
-    border: none;
-    padding: 10px;
-    margin-top: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-/* Estilo do modal */
+/* Estilos para o modal */
 .modal {
     display: none;
     position: fixed;
@@ -81,30 +64,64 @@ button:hover {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    justify-content: center;
-    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
     background-color: white;
+    margin: 15% auto;
     padding: 20px;
     border-radius: 5px;
-    text-align: center;
+    width: 80%;
     max-width: 500px;
-    margin: auto;
-    position: relative;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.modal img {
-    max-width: 100%;
+.modal-content img {
+    width: 100%;
     height: auto;
+    margin-bottom: 15px;
 }
 
 .close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 30px;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
     cursor: pointer;
+}
+
+/* Botões */
+button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Responsividade */
+@media only screen and (max-width: 768px) {
+    .catalog {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .item {
+        width: 90%;
+    }
 }
