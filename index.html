@@ -17,10 +17,9 @@
     <section>
         <h2>Roupas</h2>
         <div class="catalog" id="catalog-roupas">
-            <div class="item" data-name="Roupa 1">
+            <div class="item" data-name="Roupa 1" onclick="mostrarDetalhes('Roupa 1', 'caminho-da-imagem-1.jpg', 'Descrição da roupa 1')">
                 <img src="caminho-da-imagem-1.jpg" alt="Roupa 1">
                 <h2>Roupa 1</h2>
-                <button onclick="redirecionarWhatsApp('Roupa 1')">Falar com a vendedora</button>
             </div>
             <!-- Mais itens -->
         </div>
@@ -29,14 +28,24 @@
     <section>
         <h2>Itens para o Lar</h2>
         <div class="catalog" id="catalog-lar">
-            <div class="item" data-name="Cortina 1">
+            <div class="item" data-name="Cortina 1" onclick="mostrarDetalhes('Cortina 1', 'caminho-da-imagem-2.jpg', 'Descrição da cortina 1')">
                 <img src="caminho-da-imagem-2.jpg" alt="Cortina 1">
                 <h2>Cortina 1</h2>
-                <button onclick="redirecionarWhatsApp('Cortina 1')">Falar com a vendedora</button>
             </div>
             <!-- Mais itens -->
         </div>
     </section>
+
+    <!-- Modal de Detalhes do Produto -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <img id="productImage" src="" alt="">
+            <h2 id="productName"></h2>
+            <p id="productDescription"></p>
+            <button id="whatsappButton" onclick="">Falar com a vendedora</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

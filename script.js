@@ -18,3 +18,17 @@ function buscarProduto() {
         }
     });
 }
+
+function mostrarDetalhes(nome, imagem, descricao) {
+    document.getElementById('productModal').style.display = 'flex';
+    document.getElementById('productName').innerText = nome;
+    document.getElementById('productImage').src = imagem;
+    document.getElementById('productDescription').innerText = descricao;
+    document.getElementById('whatsappButton').onclick = function() {
+        redirecionarWhatsApp(nome);
+    };
+}
+
+function fecharModal() {
+    document.getElementById('productModal').style.display = 'none';
+}
